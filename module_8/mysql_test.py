@@ -7,8 +7,8 @@ import mysql.connector
 from mysql.connector import errorcode
 
 config = {
-    "user": "root2",
-    "password": "Wh1te###gv7b",
+    "user": "root",
+    "password": "password",
     "host": "127.0.0.1",
     "database": "pysports",
     "raise_on_warnings": True
