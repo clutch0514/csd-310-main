@@ -60,7 +60,7 @@ try:
 
     show_players(cursor, "DISPLAYING PLAYERS AFTER UPDATE")
 
-    delete_player = ("DELETE FROM player WHERE first_name = 'Rubeus'")
+    delete_player = ("DELETE FROM player WHERE first_name = 'Lord'")
 
     cursor.execute(delete_player)
 
