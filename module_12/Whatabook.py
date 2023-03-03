@@ -1,4 +1,4 @@
-# Ronald Rojas
+4# Ronald Rojas
 # CYBR410-T302
 # Prof. P. Haas
 # 03/02/2023
@@ -10,7 +10,7 @@ import sys
 import mysql.connector
 from mysql.connector import errorcode
 
-# Configure Database 
+# Configure Database with user, password, and localhost info
 config = {
     "user": "root2",
     "password": "Wh1te###gv7b",
@@ -18,7 +18,7 @@ config = {
     "database": "whatabook",
     "raise_on_warnings": True
 }
-
+# Reveal the command line interface menu
 def show_menu():
     print("\n  -- Main Menu --")
 
@@ -29,6 +29,7 @@ def show_menu():
 
         return choice
     except ValueError:
+        # Message shown when application is closed
         print("\n  Invalid number, program terminated...\n")
 
         sys.exit(0)
@@ -37,7 +38,7 @@ def show_books(_cursor):
     # Inner Join
     _cursor.execute("SELECT book_id, book_name, author, details from book")
 
-    # 
+    
     # Get the Results
     books = _cursor.fetchall()
 
@@ -74,7 +75,7 @@ def validate_user():
         sys.exit(0)
 
 def show_account_menu():
-    # Display the Account Menu
+    # Display the Account Menu and options
 
     try:
         print("\n      -- Customer Menu --")
@@ -115,7 +116,7 @@ def show_books_to_add(_cursor, _user_id):
     _cursor.execute(query)
 
     books_to_add = _cursor.fetchall()
-
+# What is shown when browsing the books in the library
     print("\n        -- DISPLAYING AVAILABLE BOOKS --")
 
     for book in books_to_add:
@@ -181,7 +182,7 @@ try:
         user_selection = show_menu()
 
     print("\n\n  Program terminated...")
-
+# Error messages if the wrong credentials are input to the application
 except mysql.connector.Error as err:
 
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
@@ -192,7 +193,7 @@ except mysql.connector.Error as err:
 
     else:
         print(err)
-
+# Close sequence if all else/if conditions are met.
 finally:
 
     db.close()

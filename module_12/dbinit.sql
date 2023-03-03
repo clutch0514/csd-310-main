@@ -6,13 +6,13 @@ Prof. P. Haas
  */
 
  -- Drop function if user already exists
-DROP USER IF EXISTS 'whatabook_user'@'localhost';
+DROP USER IF EXISTS 'root2'@'localhost';
 
 -- Create the whatabook_user account and grant all privileges to the whatabook database 
-CREATE USER 'whatabook_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Wh1te###gv7b';
+CREATE USER 'root2'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Wh1te###gv7b';
 
 -- Grant all privileges to database user named whatabook_user on localhost 
-GRANT ALL PRIVILEGES ON whatabook.* TO'whatabook_user'@'localhost';
+GRANT ALL PRIVILEGES ON whatabook.* TO'root2'@'localhost';
 
 -- Drop contstraints if they exist
 ALTER TABLE wishlist DROP FOREIGN KEY fk_book;
@@ -76,7 +76,7 @@ INSERT INTO book(book_name, author, details)
 INSERT INTO book(book_name, author, details)
     VALUES('Don Quijote', 'Miguel de Cervantes', 'A Book of Chivalry');
 
-INSERT INTO book(book_name, author, details)
+INSERT INTO book(book_name, author)
     VALUES('Hamlet', 'William Shakespeare');
 
 INSERT INTO book(book_name, author)
