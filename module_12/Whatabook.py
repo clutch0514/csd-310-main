@@ -13,7 +13,7 @@ from mysql.connector import errorcode
 # Configure Database with user, password, and localhost info
 config = {
     "user": "root2",
-    "password": "Wh1te###gv7b",
+    "password": "password",
     "host": "127.0.0.1",
     "database": "whatabook",
     "raise_on_warnings": True
